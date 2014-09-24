@@ -38,7 +38,7 @@ a:hover {
 code {
   padding: 5px;
   background-color: white;
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
 }
 
 /* line 34, ../../sass/main.scss */

@@ -19,7 +19,7 @@
         <!-- HEADER -->
         <h1>Girl Develop It Buffalo</h1>
         <h2>JS101 Class 2 Exercises: <code>for</code> Loops</h2>
-        <p><a href="http://gdichicago.com/classes/js101/index.html">Home</a></p>
+        <p><a href="../">Home</a></p>
       </div>
       <div class="pure-u-1-5"></div>
     </div>
@@ -35,37 +35,16 @@
 
         <!-- ARTICLE -->
         <article>
-          <h1>Even/Odd Reporter</h1>
-          <p>Write a for loop that will iterate from 0 to 20.For each iteration, it will check if the current number is even or odd, and report that to the screen (e.g. "2 is even").</p>
-          <button class="btn" onclick="showSolution(2)">See Solution</button>
-          <div id="solution2" style="display:none;">
-            <script src="https://gist.github.com/feministy/cf071da6ba399006294f.js"></script>
-          </div>
-        </article>
-
-        <article>
-          <h1>Multiplcation Tables</h1>
-          <p>Write a for loop that will iterate from 0 to 10. For each iteration of the for loop, it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18").</p>
-          <p><strong>Bonus:</strong> Use a nested for loop to show the tables for every multiplier from 1 to 10 (100 results total).</p>
+          <h1>FizzBuzz</h1>
+          <p>Write a for loop that will iterate from 1 to 20. For each iteration: if the current number is divisible by 3 print Fizz, if the number is divisible by 5 print Buzz, if both say FizzBuzz, otherwise simply print the number</p>
+          <p><strong>Hint:</strong>The modulus operator (<code>%</code>) can be used to get the remainder of dividing the left operand by the right operand</p>
           <button class="btn" onclick="showSolution(1)">See Solution</button>
-          <div id="solution1" style="display:none;">
-            <script src="https://gist.github.com/feministy/47562291e58fef4c12b4.js"></script>
-          </div>
-        </article>
-
-        <article>
-          <h1>Grade Assigner</h1>
-          <p>Check the results of <code>assignGrade</code> function from the <a href="ifelse.html">conditionals exercise</a> for every value from 60 to 100 - so your log should show "For 89, you got a B. For 90, you got an A.", etc.</p>
-          <button class="btn" onclick="showSolution(3)">See Solution</button>
-          <div id="solution3" style="display:none;">
-            <script src="https://gist.github.com/feministy/f4ebbeb77159cf6d4a7f.js"></script>
+          <div id="solution1" style="display: none;">
+            <script src="https://gist.github.com/shawncplus/3b962911972954c00b73.js"></script>
           </div>
         </article>
 
       </section>
-
-
-
 
         <!-- FOOTER -->
       <footer>
@@ -79,7 +58,6 @@
     </div>
     <div class="pure-u-1-5"></div>
   </div>
-
   <script>
     function showSolution(num) {
       if (confirm('You surrrrre?')) {

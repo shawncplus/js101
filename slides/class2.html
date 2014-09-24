@@ -23,15 +23,6 @@
         </section>
         <section>
           <h3>Review: Terminology</h3>
-          <p>In the following code, name the data types used, describe the scope for the variables, and spot the:<br><br>
-            <code>statement</code>,
-            <code>variable</code>,
-            <code>expression</code>,
-            <code>operator</code>,
-            <code>function</code>,
-            <code>argument</code>,
-            <code>return value</code>
-          </p>
 
           <pre><code class="javascript">function calculateTip(total) {
   var tipPercent = 0.15;
@@ -110,8 +101,8 @@ if (x > 0) {
         <section>
           <h3>Comparison Operators</h3>
           <ul>
-            <li>Compares two operands (items) and returns <code>true</code> or <code>false</code></li>
-            <li>Operands can be numerial, string, logical, or object values</li>
+            <li>Compares the expressions (operands) to the left and right of the operator and returns <code>true</code> or <code>false</code></li>
+            <li>Operands can be any expression that resolves to a value</li>
             <li>If the operands aren't the same type, JavaScript tries to convert before comparing, <strong>except for</strong>...</li>
             <li>Strict comparisons don't attempt conversion</li>
           </ul>
@@ -119,64 +110,59 @@ if (x > 0) {
 
         <section>
           <h3>Equality</h3>
-          <pre><code class="javascrpt">var myAge = 28;
-myAge == 28;</code></pre>
+          <pre><code class="javascript">var myAge = 26;
+if (myAge == 26) {
+    // stuff
+ }</code></pre>
           <p><strong>Important!</strong><br>Don't confuse assignment (<code>=</code>) with equality comparisons (<code>==</code>)!</p>
         </section>
 
         <section>
           <h3>Strict equality</h3>
-          <p>Does not convert objects!</p>
-          <pre><code class="javascript">var myAge = 28;
-myAge === 28;</code></pre>
+          <pre><code class="javascript">var myAge = 26;
+if (myAge === 26) {
+    // stuff
+}</code></pre>
           <p>What happens when we do this?</p>
-          <pre><code class="javascript">var age = '28';
-age === 28;</code></pre>
+          <pre><code class="javascript">var age = '26';
+if (age === 26) {
+    // stuff
+}</code></pre>
         </section>
 
         <section>
           <h3>Inequality</h3>
-          <pre><code class="javascript">var myAge = 28;
-myAge != 28;</code></pre>
-        </section>
-
-        <section>
+          <pre><code class="javascript">var myAge = 26;
+if (myAge != 26) {
+    // stuff
+}</code></pre>
           <h3>Strict inequality</h3>
-          <pre><code class="javascript">var myAge = 28;
-myAge !== 28;</code></pre>
+          <pre><code class="javascript">var myAge = 26;
+if (myAge !== 26) {
+    // stuff
+}</code></pre>
         </section>
 
         <section>
           <h3>Greater than</h3>
-          <pre><code class="javascript">var myAge = 28;
-myAge &gt; 28;</code></pre>
-        </section>
+          <pre><code class="javascript">myAge &gt; 26</code></pre>
 
-        <section>
           <h3>Less than</h3>
-          <pre><code class="javascript">var myAge = 28;
-myAge &lt; 28;</code></pre>
-        </section>
+          <pre><code class="javascript">myAge &lt; 26;</code></pre>
 
-        <section>
           <h3>Greater than or equal</h3>
-          <pre><code class="javascript">var myAge = 28;
-myAge &gt;= 28;</code></pre>
-        </section>
+          <pre><code class="javascript">myAge &gt;= 26</code></pre>
 
-        <section>
           <h3>Less than or equal</h3>
-          <pre><code class="javascript">var myAge = 28;
-myAge &lt;= 28;</code></pre>
+          <pre><code class="javascript">myAge &lt;= 26 </code></pre>
         </section>
 
 
 <!-- Logical operators -->
 
         <section>
-          <h1>Operators</h1>
-          <p>Logical</p>
-          <p>And, or, not.</p>
+          <h1>Logical Operators</h1>
+          <p>AND, OR, NOT</p>
         </section>
 
         <section>
@@ -184,28 +170,28 @@ myAge &lt;= 28;</code></pre>
           <ul>
             <li>Typically used with comparison operators</li>
             <li>Compare two operands and returns <code>true</code> or <code>false</code></li>
-            <li>Allow you to test several conditions at once!</li>
+            <li>Allow you to test several conditions at once</li>
             <li>Always read <strong>left to right</strong></li>
-            <li>Only continue testing if needed</li>
+            <li>Only continues testing if needed</li>
           </ul>
         </section>
 
         <section>
-          <h3><code>&&</code></h3>
+          <h3><code>AND - &amp;&amp;</code></h3>
           <p><strong>Returns true if:</strong> both statements are true.</p>
           <pre><code class="javascript">var posNum = 4;
 var negNum = -2;</code></pre>
           <p>True expressions:</p>
-          <pre><code class="javascript">posNum &gt; 0 && negNum &lt; 0
-4 &gt; 0 && -2 &lt; 0</code></pre>
+          <pre><code class="javascript">posNum &gt; 0 &amp;&amp; negNum &lt; 0
+4 &gt; 0 &amp;&amp; -2 &lt; 0</code></pre>
           <p>False expressions:</p>
-          <pre><code class="javascript">posNum &gt; 0 && negNum &gt; 0
-4 &gt; 0 && -2 &gt; 0</code></pre>
+          <pre><code class="javascript">posNum &gt; 0 &amp;&amp; negNum &gt; 0
+4 &gt; 0 &amp;&amp; -2 &gt; 0</code></pre>
         </section>
 
         <section>
-          <h3><code>||</code></h3>
-          <p><strong>Returns true if:</strong> <em>either</em> statement is true.</p>
+          <h3><code><em>Inclusive</em> OR - ||</code></h3>
+          <p><strong>Returns true if:</strong> <em>either</em> statement (or both) is true.</p>
           <pre><code class="javascript">var posNum = 4;
 var negNum = -2;</code></pre>
           <p>True expressions:</p>
@@ -217,24 +203,33 @@ var negNum = -2;</code></pre>
         </section>
 
         <section>
-          <h3><code>!</code></h3>
-          <p><strong>Returns true if:</strong> the statement is not true.</p>
-          <pre><code class="javascript">var posNum = 4;
-var negNum = -2;</code></pre>
-          <p>True expressions:</p>
-          <pre><code class="javascript">!(posNum === negNum)
-!(posNum < 0)</code></pre>
-          <p>False expressions:</p>
-          <pre><code class="javascript">!(posNum !== negNum)
-!(posNum &gt; 0)</code></pre>
+          <h3><code>Negation - !</code></h3>
+          <p>Inverts the truth of another expression</p>
+          <pre><code class="javascript">var wants_to_dance = true;
+var friends_of_mine = true;
+if (!wants_to_dance) {
+    friends_of_mine = false;
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Increment/Decrement ++ / --</h3>
+            <p>Used to increment or decrement a variable by one</p>
+            <pre><code class="javascript">var start = 0;
+start++;
+console.log(start); // 1
+console.log(start++); // Postfix - 1
+console.log(start); // 2
+console.log(++start); // Prefix - 3</code></pre>
+            <p>Most commonly used in a <code>for</code> loop</p>
         </section>
 
         <section>
           <h3>Using mutiple operators</h3>
           <p>When combining together multiple conditions, use parantheses to group:</p>
-          <pre><code class="javascript">var myAge = 28;
-if ((myAge &gt;= 0 && myAge &lt; 3)  || myAge &gt; 90) {
-  console.log('You\'re not quite in your peak.');
+          <pre><code class="javascript">var friends = false;
+if (favorite_band === 'The Mountain Goats' || has_beer) {
+    friends = true;
 }</code></pre>
           <aside class="notes">
             <p>Logical operators are typically used with Boolean (logical) values; when they are, they return a Boolean value. However, the && and || operators actually return the value of one of the specified operands, so if these operators are used with non-Boolean values, they may return a non-Boolean value. The logical operators are described on the slides.</p>
@@ -246,7 +241,7 @@ if ((myAge &gt;= 0 && myAge &lt; 3)  || myAge &gt; 90) {
           <h1>Operators</h1>
           <p>An important lesson: truthy and falsey</p>
         </section>
-          
+
           <section>
             <h3>Truthy</h3>
             <p>If you don't use a comparison or logical operator, JavaScript tries to figure out if the value is "truth-y".</p>
@@ -255,11 +250,11 @@ if (dogsRule) {
   console.log("Yay dogs!");
 }</code></pre>
           </section>
-          
+
           <section>
             <h3>Falsey</h3>
             <p>Values that are "false-y": <code>false</code>, the empty string (<code>""</code>), the number <code>0</code>, <code>undefined</code>, <code>null</code>.</p>
-            
+
             <pre><code class="javascript">var name = '';
 if (name) {
   console.log("Hello, " + name);
@@ -275,158 +270,152 @@ if (firstName) {
   console.log("Your name is " + firstName);
 }</code></pre>
           </section>
-          
+
 <!-- Short-circuit evaluation -->
           <section>
             <h1>Short-Circuit Evaluation</h1>
             <p>How JavaScript saves us time!</p>
           </section>
-          
+
           <section>
             <h3>Short-Circuit Evaluation</h3>
             <p>JavaScript evaluates all logical operators from left to right. It <em>stops evaluating</em> as soon as it knows the answer.</p>
             <p>When it stops depends on the operator you're using.</p>
           </section>
-          
+
           <section>
             <h3>Short-Circuit Evaluation: <code>&&</code></h3>
             <p>Stops as soon as it hits a <code>false</code> expression because it requires <em>all</em> things to be true.</p>
             <pre><code class="javascript">var name = "";
-var age = 28;
+var age = 26;
 if (name && age) {
   console.log("Hello!);
 }</code></pre>
             <p>Because <code>name</code> is false, it won't ever get to <code>age</code>.</p>
           </section>
-          
+
           <section>
             <h3>Short-circuit evaluation: <code>||</code></h3>
             <p>Stops as soon as it hits a <code>true</code> expression because it only needs <em>one</em> thing to be true.</p>
             <pre><code class="javascript">var name = "";
-var age = 28;
+var age = 26;
 if (name || age) {
   console.log("Hello!);
 }</code></pre>
             <p><code>name</code> is false, but <code>age</code> is true, so this goes the whole way through.</p>
-            
+
             <p>If we change this around to:</p>
             <pre><code class="javascript">if (age || name) {
   console.log("Hello!);
 }</code></pre>
             <p><code>age</code> is true, so it stops evaluating.</p>
           </section>
-          
-<!-- if/else statements -->
-          
+
+
           <section>
             <h1>Control Flow</h1>
             <p><code>if</code>, <code>else if</code>, and <code>else</code> statements</p>
           </section>
-          
+
           <section>
             <h3><code>if</code>/<code>else</code> statements</h3>
-            <p>Use <code>else</code> to give JavaScript an alternative statement. <code>else</code> runs when the <code>if</code> statement doesn't run.</p>
-            <pre><code class="javascript">var age = 28;
-if (age &gt;= 16) {
-  console.log("Yay, you can drive!);
+            <p>Use <code>else</code> to give JavaScript an alternative statement. <code>else</code> runs when the <code>if</code> statement fails.</p>
+            <pre><code class="javascript">...
+if (is_admin) {
+    delete_user();
 } else {
-  console.log("Sorry, but you have " + (16 - age) + " years until you can drive.");
+    alert('Only admins can delete users');
 }</code></pre>
-            <p>What can we change <code>age</code> to if we wanted to make this hit <code>else</code> instead of <code>if</code>?</p>
-          </section>
-          
-          <section>
-            <h3><code>if</code>/<code>else if</code>/<code>else</code></h3>
-            <p>If you want multiple checks, you can use <code>else if</code> to run through them all.</p>
-            <pre><code class="javascript">var age = 20;
-if (age &gt;= 35) {
-  console.log("You can vote and hold any place in government!");
-} else if (age &gt;= 25) {
-  console.log("You can vote and run for Senate!");
-} else if (age &gt;= 18) {
-  console.log("You can vote!");
-} else {
-  console.log("You have no voice in government!");
-}</code></pre>
-            <p>The order of your conditions matters. Very important to remember! JavaScript will pick the <em>first</em> match, not the <em>best</em> match.</p>
-          </section>
-          
-          <section>
-            <h1>Exercise!</h1>
-            <h2><a href="../exercises/class2_if_else.html"><code>if</code>/<code>else</code></a></h2>
-            <p>If you get stuck, raise your hand.</p>
           </section>
 
+          <section>
+            <h3><code>if/else/else if</code></h3>
+            <p>If you want multiple checks, you can use <code>else if</code> to run through them all.</p>
+            <pre><code class="javascript">...
+if (!zipcode) {
+    console.log('No name given');
+} else if (zipcode.length !== 5 || isNaN(parseInt(zipcode, 10))) {
+  console.log("Invalid zipcode");
+} else {
+    console.log("Your zipcode is " + zipcode);
+}</code></pre>
+          </section>
+
+          <section>
+            <h1>Exercise!</h1>
+            <h2><a href="../exercises/class2_if_else.html"><code>if/else</code></a></h2>
+            <p>If you get stuck, raise your hand.</p>
+          </section>
 
 <!-- ************************** -->
 <!-- BREAK -->
 <!-- ************************** -->
-          
           <section>
             <h1>Loops</h1>
-            <p><code>while</code> loop</p>
+            <ul>
+                <li>while</li>
+                <li>do/while</li>
+                <li>for</li>
           </section>
 
 <!-- while loops -->
           <section>
             <h3><code>while</code> loop</h3>
-            <p>The <code>while</code> loop tells JavaScript to repeat statements until a condition is true. A <code>while</code> statement looks like this:</p>
-            <pre><code class="javascript">while (expression) {
-// statements to repeat
-}</code></pre>
-          </section>
-          
-          <section>
-            <h3><code>while</code> loop</h3>
+            <p>The <code>while</code> loop tells JavaScript to repeat statements while the condition remains true</p>
             <pre><code class="javascript">var x = 0;
 while (x &lt; 5) {
   console.log(x);
-  x = x + 1;
+  x++;
 }</code></pre>
-            <p>Be <em>very careful</em>! It's easy to accidentally cause an infinite loop where your code never stops running.</p>
+            <h3><code>do/while</code></h3>
+            <p>Exactly like while but will run the body at least once before quitting</p>
+            <pre><code class="javascript">var name = null;
+do {
+  name = prompt('What is your name?');
+} while (!name);
+console.log(name);</code></pre>
+            <p>Pretty rare with specific use-cases</p>
           </section>
-   
+
 <!-- for loops -->
-          <section>
-            <h1>Loops</h1>
-            <p><code>for</code> loop</p>
-          </section>
-            
           <section>
             <h3><code>for</code> loop</h3>
             <p>The <code>for</code> loop is another way of repeating statements, more specialized than <code>while</code>. There are more pieces:</p>
-            <pre><code class="javascript">for (initialize; condition; update) {
+            <pre><code class="javascript">for (initialize variable(s); condition; update) {
 // statements to repeat
 }</code></pre>
           </section>
           <section>
             <h3><code>for</code> loop</h3>
             <p>What it looks like with real values:</p>
-            <pre><code class="javascript">for (var i = 0; i &lt; 5; i = i + 1) {
+            <pre><code class="javascript">for (var i = 0; i &lt; 5; i++) {
   console.log(i);
 }</code></pre>
-            <p>We can use i, j, k, etc. It's harder to do an infinite loop with <code>for</code>, but it's still possible (like if you make a typo).</p>
-            <p>To save space, we can use this for the update part: <code>i++</code>. It is shorthand for: <code>i = i + 1</code>. Most people use this!</p>
+            <p>The for loop used when you have a known start/stop for your loop</p>
           </section>
 
 <!-- breaking out of loops -->
           <section>
-            <h1>Loops</h1>
-            <p>Breaking out of loops with <code>break</code>.</p>
-          </section>
-          
-          <section>
-            <h3><code>break</code> statement</h3>
+            <h3><code>break</code></h3>
             <p>To prematurely exit a loop, you can use the <code>break</code> statement:</p>
             <pre><code class="javascript">for (var current = 100; current &lt; 200; current++) {
   console.log("Testing " + current);
-  if (current % 7 == 0) {
+  if (current === 155) {
     console.log("Found it! " + current);
     break;
   }
 }</code></pre>
+          <h3><code>continue</code></h3>
+          <p>Used to skip an iteration</p>
+          <pre><code class="javascript">for (var current = 100; current &lt; 200; current++) {
+  if (current === 155) {
+      console.log('Skip 155');
+      continue;
+  }
+  console.log('Current: ' + current);
+}</code></pre>
           </section>
-          
+
           <section>
             <h1>Exercise!</h1>
             <h2><a href="../exercises/class2_for_loops.html">Loops</a></h2>
@@ -437,7 +426,7 @@ while (x &lt; 5) {
 <!-- ************************** -->
 <!-- BREAK -->
 <!-- ************************** -->
-          
+
           <section>
             <h1>Arrays</h1>
             <p>A data type containing an ordered list of values.</p>
@@ -447,47 +436,65 @@ while (x &lt; 5) {
             <h3>Arrays</h3>
             <p>Arrays are a data type that hold an ordered list of values. These values can be any type. Arrays look like this:</p>
             <pre><code class="javascript">var arrayName = [element0, element1, element2];</code></pre>
-            <p>We can make an array of our favorite things:</p>
-            <pre><code class="javascript">var favoriteThings = ["kittens", "brown paper packages", "ribbons"]</code></pre>
-            <p>And find out the length:</p>
-            <pre><code class="javascript">console.log(favoriteThings.length);</code></pre>
+            <p>We can make an array of our favorite bands:</p>
+            <pre><code class="javascript">var favoriteBands = [
+  "The Mountain Goats", "Timber Timbre", "Fleet Foxes"
+]</code></pre>
+            <p>And find out the length (property):</p>
+            <pre><code class="javascript">console.log(favoriteBands.length);</code></pre>
           </section>
 
           <section>
             <h3>Accessing things in arrays</h3>
-            <p>You can access things in an array using bracket notation and the position. The first item in your array is at position 0.</p>
-            <pre><code class="javascript">var rainbowColors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet'];
-var firstColor = rainbowColors[0];
-var lastColor = rainbowColors[6];</code></pre>
-            <p>What is <code>firstColor</code>? What is <code>lastColor</code>?</p>
+            <p>You can access things in an array using bracket notation and the index. The first item in your array is at index 0 (Blame Martin Richards)</p>
+            <pre><code class="javascript">var colors = ['Red', 'Orange', 'Yellow', 'Green'];
+var firstColor = colors[0];
+var lastColor = colors[colors.length - 1];</code></pre>
           </section>
-
 
           <section>
             <h3>Changing items in arrays</h3>
             <p>You can also use bracket notation to change items in the array.</p>
-            <pre><code class="javascript">var myFavoriteThings = ['Broccoli', 60481, 'Love Actually'];
-myFavoriteThings[0] = 'Celery Root';</code></pre>
-            <p>Now when we call <code>favorieThings[0]</code>, what do we get?</p>
+            <pre><code class="javascript">var favoriteBands = [
+  "The Mountain Goats", "Timber Timbre", "Fleet Foxes"
+];
+favoriteBands[1] = 'Dog and Panther';</code></pre>
           </section>
 
 
           <section>
             <h3>Adding items to arrays</h3>
-            <p>If you know how many items are in an array, you can use bracket notation to add things to the end.</p>
-            <pre><code class="javascript">var myFavoriteThings = ['Broccoli', 60481, 'Love Actually'];
-myFavoriteThings[4] = 'Sunshine';</code></pre>
-            <p>If you don't know how many items you have, there's a handy method for this called <code>push()</code>. It looks like this:</p>
-            <pre><code class="javascript">myFavoriteThings.push("Dancing");
-  console.log(myFavoriteThings);</code></pre>
-            <p>What's in our array now?</p>
+            <p>Adding to an array is done with the <code>push()</code> method of the array</p>
+            <pre><code class="javascript">var favoriteBands = [
+  "The Mountain Goats", "Timber Timbre", "Fleet Foxes"
+];
+favoriteBands.push("Good Old War");
+console.log(favoriteBands);</code></pre>
           </section>
 
           <section>
-            <h3>Iterating through arrays</h3>
+            <h3>Iterating through arrays - for</h3>
             <p>Use a <code>for</code> loop to easily process each item in an array:</p>
-            <pre><code class="javascript">var rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+            <pre><code class="javascript">var rainbowColors = [
+  "red", "orange", "yellow", "green", "blue", "indigo", "violet"
+];
 
+for (var i = 0; i &lt; rainbowColors.length; i++) {
+  console.log(rainbowColors[i]);
+}</code></pre>
+          </section>
+
+          <section>
+            <h3>Iterating through arrays - forEach</h3>
+            <p>Modern browsers (and IE9+) support the forEach method, which is cleaner than a for loop</p>
+            <pre><code class="javascript">var rainbowColors = [
+  "red", "orange", "yellow", "green", "blue", "indigo", "violet"
+];
+
+rainbowColors.forEach(function (color, index) {
+  console.log(color);
+});
+// compared to
 for (var i = 0; i &lt; rainbowColors.length; i++) {
   console.log(rainbowColors[i]);
 }</code></pre>
@@ -497,17 +504,15 @@ for (var i = 0; i &lt; rainbowColors.length; i++) {
             <h1>Exercise!</h1>
             <h2><a href="../exercises/class2_arrays.html">Arrays</a></h2>
           </section>
-          
+
           <section>
             <h3>Getting help</h3>
             <p>Google for questions or check <a href="http://stackoverflow.com">Stack Overflow</a>. Also look on the <a href="https://developer.mozilla.org/en/JavaScript/Guide">Mozilla Developer Network</a>.</p>
-            <p>Before you share your problematic code, post it to <code>jsbin.com</code></p>
           </section>
-          
+
           <section>
             <h1>Homework</h1>
-            <h2><a href="../homework/class2_word_guesser.html">Word guesser</a></h2>
-            <p>If you get stuck between now and next class, put your code on <a href="http://jsbin.com">JSBin.com</a> and email it to your instructor.</p>
+            <h2><a href="../homework/class2_word_guesser.html">Number guesser</a></h2>
           </section>
 
       </div>
