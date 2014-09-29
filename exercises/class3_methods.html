@@ -31,16 +31,20 @@
       <section>
 
         <article>
-          <h1>The Todo list</h1>
-           <ul>
-            <li>Create an array of objects, where each object describes a task and has properties for
-            the <code>description</code> (a string), <code>priority</code> (a string), and whether or not it's <code>done</code> (boolean)</li>
-            <li>Iterate (loop) through the array of tasks and output the task using an if/else statement to change the output depending on whether it's done or not. If it's done, log a string like '[X] Sleep (high)', and if not, log a string like '[ ] Sleep (high)'</li>
-           </ul>
+          <h1>The Todo list expanded</h1>
+          Create a <code>TodoList</code> object with
+           <ol>
+               <li>A <code>tasks</code> array property</li>
+               <li>A method <code>printTasks</code> that will, like the previous excercise, loop over the <code>TodoList</code>'s tasks and print similarly.</li>
+               <li>An <code>addTask</code> method that will add a given task to the list of tasks.</li>
+
+               <li>Use the object to add a task to the TodoList and then print the tasks</li>
+               <li><strong>Bonus:</strong> add a <code>completeTask</code> method that will take an <code>task_index</code> as a parameter and will set the appropriate task to be done</li>
+           </ol>
 
            <button class="btn" onclick="showSolution(2)">See Solution</button>
           <div id="solution2" style="display:none;">
-              <script src="https://gist.github.com/shawncplus/3416dd7a529583b6138f.js"></script>
+              <script src="https://gist.github.com/anonymous/6e3850a58171d8dcaac8.js"></script>
           </div>
         </article>
       </section>
